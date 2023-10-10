@@ -5,7 +5,7 @@ metadata:
   labels:
     app: my-dep
   name: my-dep
-  namespace: 
+  namespace: httpd-teste-k8s
 spec:
   replicas: 1
   selector:
