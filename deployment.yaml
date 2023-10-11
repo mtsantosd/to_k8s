@@ -1,8 +1,13 @@
+#Namespace
+#
 apiVersion: v1
 kind: Namespace
 metadata:
   name: httpd-on-k8s
-
+  labels:
+    name: httpd-on-k8s
+#Deployment
+#
 apiVersion: apps/v1
 kind: Deployment
 metadata:
