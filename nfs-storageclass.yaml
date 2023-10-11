@@ -1,0 +1,10 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: nfs
+provisioner: lab.net/external-nfs
+parameters:
+  server: nfs-for-kubernetes.lab.net
+  path: /kubernetes-share
+  onDelete: "retain"
+  #readOnly: "false"

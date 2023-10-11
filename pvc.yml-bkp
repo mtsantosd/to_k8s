@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pvc-apache
+  namespace: web
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: nfs-external
+  resources:
+    requests:
+      storage: 2Gi
