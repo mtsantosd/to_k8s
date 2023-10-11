@@ -24,6 +24,6 @@ spec:
         app: httpd-server
     spec:
       containers:
-        - image: httpd:2.4
-        name: httpd
+        - name: httpd
+          image: httpd:2.4
         resources: {}
