@@ -11,11 +11,10 @@ metadata:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  creationTimestamp: null
+  namespace: httpd-on-k8s
+  name: httpd-server
   labels:
     app: httpd-server
-  name: httpd-server
-  namespace: httpd-on-k8s
 spec:
   replicas: 1
   selector:
