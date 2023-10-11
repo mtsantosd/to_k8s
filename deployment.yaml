@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: httpd-from-jenkins-on-k8s
+  name: httpd-on-k8s
 
 apiVersion: apps/v1
 kind: Deployment
@@ -10,7 +10,7 @@ metadata:
   labels:
     app: httpd-server
   name: httpd-server
-  namespace: httpd-from-jenkins-on-k8s
+  namespace: httpd-on-k8s
 spec:
   replicas: 1
   selector:
