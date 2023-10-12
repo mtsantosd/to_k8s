@@ -1,5 +1,6 @@
 pipeline {
   agent {}
+  kubernetes {}
   environment {
 	namespace = "web-${BRANCH_NAME}"
 	pvc_name = "web-pvc-${BRANCH_NAME}"
