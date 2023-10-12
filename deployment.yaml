@@ -2,22 +2,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: web-server-$BRANCH_NAME
+  name: web-server-${BRANCH_NAME}
 spec:
   selector:
     matchLabels:
-      app: web-$BRANCH_NAME
+      app: web-${BRANCH_NAME}
   template:
     metadata:
       labels:
-        app: web-$BRANCH_NAME
+        app: web-${BRANCH_NAME}
     spec:
       volumes:
         - name: nfs-pvc-web-vol
           persistentVolumeClaim:
             claimName: nfs-pvc-web
       containers:
-      - name: httpd-$BUILD_NUMBER
+      - name: httpd-${BUILD_NUMBER}
         image: httpd:2.4.48-alpine3.14
         ports:
         - containerPort: 80
@@ -28,10 +28,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: web-server-service-$BRANCH_NAME
+  name: web-server-service-${BRANCH_NAME}
 spec:
   selector:
-    app: web-$BRANCH_NAME
+    app: web-${BRANCH_NAME}
   ports:
     - protocol: TCP
       port: 80
