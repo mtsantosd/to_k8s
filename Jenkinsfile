@@ -21,6 +21,8 @@ pipeline {
                     sh '/home/jenkins/.local/bin/kubectl version --client'
                     sh '(/home/jenkins/.local/bin/kubectl get ns web-${BRANCH_NAME} || /home/jenkins/.local/bin/kubectl create ns web-${BRANCH_NAME})'
                     sh '/home/jenkins/.local/bin/kubectl apply -f pvc.yaml -n web-${BRANCH_NAME}'
+		    sh 'echo $BRANCH_NAME'
+		    sh 'echo ${BRANCH_NAME}'
                     sh 'cat deployment.yaml | /home/jenkins/.local/bin/kubectl apply -n web-${BRANCH_NAME} -f - '
                     sh 'sleep 20'
                     sh '/home/jenkins/.local/bin/kubectl get pods,service -n web-${BRANCH_NAME}'
