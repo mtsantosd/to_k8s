@@ -19,8 +19,7 @@ pipeline {
                     sh 'mkdir -p ~/.local/bin'
                     sh 'mv ./kubectl ~/.local/bin/kubectl'
                     sh '/home/jenkins/.local/bin/kubectl version --client'
-                    sh '/home/jenkins/.local/bin/kubectl apply -f pvc.yaml'
-                    sh '/home/jenkins/.local/bin/kubectl apply -f deployment.yaml'
+                    sh '/home/jenkins/.local/bin/kubectl apply -f namespace.yaml'
                     sh 'sleep 20'
                     sh '/home/jenkins/.local/bin/kubectl get pods,service -n web-"${BRANCH_NAME}"'
                 }
