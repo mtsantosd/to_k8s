@@ -1,5 +1,10 @@
 pipeline {
   agent {
+  environment {
+	namespace = web-${BRANCH_NAME}
+	pvc_name = nfs-dyn-100mi-pvc-${BRANCH_NAME}
+        app_name  = httpd-${BUILD_NUMBER}
+  }
   kubernetes {}
   }
   stages {
