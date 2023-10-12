@@ -1,4 +1,4 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: web-"${env.BRANCH_NAME}"
+  name: web-${env.BRANCH_NAME}
