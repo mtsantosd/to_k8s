@@ -1,3 +1,7 @@
+def namespace = "web-${BRANCH_NAME}"
+def pvc_name = "web-pvc-${BRANCH_NAME}"
+def app_name  = "httpd-${BUILD_NUMBER}"
+
 ---
 apiVersion: apps/v1
 kind: Deployment
