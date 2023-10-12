@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: nfs-dyn-100mi-pvc
+  name: nfs-dyn-100mi-pvc-${BRANCH_NAME}
   namespace: web-${BRANCH_NAME}
 spec:
   storageClassName: nfs
