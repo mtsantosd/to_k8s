@@ -19,7 +19,7 @@ pipeline {
                     sh 'mkdir -p ~/.local/bin'
                     sh 'mv ./kubectl ~/.local/bin/kubectl'
                     sh '/home/jenkins/.local/bin/kubectl version --client'
-                    sh '/home/jenkins/.local/bin/kubectl create ns web-"${BRANCH_NAME}"'
+                    sh '/home/jenkins/.local/bin/kubectl get ns ${env.BRANCH_NAME} || /home/jenkins/.local/bin/kubectl create ns ${env.BRANCH_NAME}"
                     sh 'sleep 20'
                     sh '/home/jenkins/.local/bin/kubectl get pods,service -n web-"${env.BRANCH_NAME}"'
                 }
