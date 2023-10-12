@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: web-server-${BRANCH_NAME}
+  name: web-server-{{BRANCH_NAME}}
   namespace: web-${BRANCH_NAME}
 spec:
   selector:
