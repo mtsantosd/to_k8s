@@ -1,13 +1,8 @@
-def namespace = "web-${BRANCH_NAME}"
-def pvc_name = "web-pvc-${BRANCH_NAME}"
-def app_name  = "httpd-${BUILD_NUMBER}"
-
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: {{ pvc_name }}
-  namespace: {{ namespace }}
+  name: nfs-pvc-web
 spec:
   storageClassName: nfs
   accessModes:
