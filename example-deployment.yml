@@ -1,21 +1,21 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: web-${GIT_BRANCH}
+  name: web-${BRANCH_NAME}
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: web-server-${GIT_BRANCH}
-  namespace: web-${GIT_BRANCH}
+  name: web-server-${BRANCH_NAME}
+  namespace: web-${BRANCH_NAME}
 spec:
   selector:
     matchLabels:
-      app: web-${GIT_BRANCH}
+      app: web-${BRANCH_NAME}
   template:
     metadata:
       labels:
-        app: web-${GIT_BRANCH}
+        app: web-${BRANCH_NAME}
     spec:
       volumes:
         - name: nfs-dyn-100mi-vol
@@ -33,14 +33,13 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: web-server-service-${GIT_BRANCH}
-  namespace: web-${GIT_BRANCH}
+  name: web-server-service-${BRANCH_NAME}
+  namespace: web-${BRANCH_NAME}
 spec:
   selector:
-    app: web-${GIT_BRANCH}
+    app: web-${BRANCH_NAME}
   ports:
     - protocol: TCP
       port: 80
       targetPort: 80
   type: LoadBalancer
-
