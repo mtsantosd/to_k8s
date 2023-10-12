@@ -22,7 +22,7 @@ spec:
           persistentVolumeClaim:
             claimName: nfs-dyn-100mi-pvc
       containers:
-      - name: httpd-${GIT_BRANCH}
+      - name: httpd-${BUILD_NUMBER}
         image: httpd:2.4.48-alpine3.14
         ports:
         - containerPort: 80
