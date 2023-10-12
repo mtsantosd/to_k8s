@@ -5,7 +5,6 @@ pipeline {
 	pvc_name = web-pvc-${BRANCH_NAME}
        	app_name  = httpd-${BUILD_NUMBER}
   }
-  }
   stages {
         stage('Clone Repo') {
             steps {
