@@ -1,9 +1,9 @@
 pipeline {
-  agent 
+  agent {}
   environment {
-	namespace = web-${BRANCH_NAME}
-	pvc_name = web-pvc-${BRANCH_NAME}
-       	app_name  = httpd-${BUILD_NUMBER}
+	namespace = "web-${BRANCH_NAME}"
+	pvc_name = "web-pvc-${BRANCH_NAME}"
+       	app_name  = "httpd-${BUILD_NUMBER}"
   }
   stages {
         stage('Clone Repo') {
