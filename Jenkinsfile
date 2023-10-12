@@ -5,7 +5,8 @@ pipeline {
   stages {
         stage('Clone Repo') {
             steps {
-                git 'https://github.com/mtsantosd/to_k8s.git#${BRANCH_NAME}'
+		git branch: ${BRANCH_NAME},
+			 url: 'https://github.com/mtsantosd/to_k8s.git'
             }
         }
         stage('Deploy app on K8s') {
