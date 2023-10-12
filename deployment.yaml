@@ -6,11 +6,11 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: web-test
+      app: web-qa
   template:
     metadata:
       labels:
-        app: web-test
+        app: web-qa
     spec:
       volumes:
         - name: nfs-pvc-web-vol
@@ -28,10 +28,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: web-server-service-test
+  name: web-server-service-qa
 spec:
   selector:
-    app: web-test
+    app: web-qa
   ports:
     - protocol: TCP
       port: 80
