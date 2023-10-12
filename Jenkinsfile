@@ -5,7 +5,7 @@ pipeline {
   stages {
         stage('Clone Repo') {
             steps {
-		git branch: ${BRANCH_NAME},
+		git branch: "${BRANCH_NAME}",
 		    url: 'https://github.com/mtsantosd/to_k8s.git'
 
 		sh "ls -lat"
@@ -22,7 +22,7 @@ pipeline {
                     sh '/home/jenkins/.local/bin/kubectl apply -f pvc.yaml'
                     sh '/home/jenkins/.local/bin/kubectl apply -f deployment.yaml'
                     sh 'sleep 20'
-                    sh '/home/jenkins/.local/bin/kubectl get pods,service -n web-${BRANCH_NAME}'
+                    sh '/home/jenkins/.local/bin/kubectl get pods,service -n web-"${BRANCH_NAME}"'
                 }
             }
         }
