@@ -6,11 +6,11 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: web-test
+      app: web-prod
   template:
     metadata:
       labels:
-        app: web-test
+        app: web-prod
     spec:
       volumes:
         - name: nfs-pvc-web-vol
@@ -28,12 +28,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: web-server-service-test
+  name: web-server-service-prod
 spec:
   selector:
-    app: web-test
+    app: web-prod
   ports:
     - protocol: TCP
-      port: 82
+      port: 80
       targetPort: 80
   type: LoadBalancer
